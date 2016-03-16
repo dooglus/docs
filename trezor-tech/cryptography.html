@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cryptography &mdash; TREZOR Developer&#39;s guide 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/theme.css.custom.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="TREZOR Developer&#39;s guide 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Resources" href="resources.html"/>
+        <link rel="prev" title="API Workflows" href="api-workflows.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html"><li><i class="fa fa-home fa-2x"></i></li></a>
+        <a href="../trezor-faq/index.html"><li><i class="fa fa-question-circle fa-2x"></i></li></a>
+        <a href="../trezor-user/index.html"><li><i class="fa fa-user fa-2x"></i></li></a>
+        <a href="../trezor-apps/index.html"><li><i class="fa fa-cube fa-2x"></i></li></a>
+        <a href="../trezor-tech/index.html"><li><i class="fa fa-cogs fa-2x"></i></li></a>
+        <br/>
+        
+          <a href="index.html"> TREZOR Developer's guide</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#board">Board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#schematics">Schematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#bill-of-materials">Bill of Materials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">TREZOR APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api-connect.html">TREZOR Connect API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-protobuf.html">Low level API</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Cryptography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mnemonic-recovery-seed-bip39">Mnemonic recovery seed (BIP39)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#passphrase-encryption">Passphrase encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hierarchical-deterministic-wallets-bip32-and-bip44">Hierarchical Deterministic wallets (BIP32 and BIP44)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#secure-transactions">Secure transactions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#git-repositories">Git repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#security">Security</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="feature_list.html">Feature List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protection_levels.html">Protection Levels</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">TREZOR Developer's guide</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Cryptography</li>
+      <li class="wy-breadcrumbs-aside">
+        <ul class="share-buttons">
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://doc.satoshilabs.com/&t=" target="_blank" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img src="_static/images/flat_web_icon_set/Facebook.png"></a></li>
+            <li><a href="https://twitter.com/intent/tweet?source=http://doc.satoshilabs.com/&text=:%20http://doc.satoshilabs.com/" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent(document.URL)) + '%20@BitcoinTrezor'; return false;"><img src="_static/images/flat_web_icon_set/Twitter.png"></a></li>
+            <li><a href="https://plus.google.com/share?url=http://doc.satoshilabs.com/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img src="_static/images/flat_web_icon_set/Google+.png"></a></li>
+            <li><a href="http://www.tumblr.com/share?v=3&u=http://doc.satoshilabs.com/&t=&s=" target="_blank" title="Post to Tumblr" onclick="window.open('http://www.tumblr.com/share?v=3&u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Tumblr.png"></a></li>
+            <li><a href="http://pinterest.com/pin/create/button/?url=http://doc.satoshilabs.com/&description=" target="_blank" title="Pin it" onclick="window.open('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.URL) + '&description=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Pinterest.png"></a></li>
+            <li><a href="http://www.reddit.com/submit?url=http://doc.satoshilabs.com/&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Reddit.png"></a></li>
+            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://doc.satoshilabs.com/&title=&summary=&source=http://doc.satoshilabs.com/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/LinkedIn.png"></a></li>
+        </ul>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="cryptography">
+<h1>Cryptography<a class="headerlink" href="#cryptography" title="Permalink to this headline">¶</a></h1>
+<p>TREZOR adheres to current advanced cryptography standards.  Many of these standards are published as <a class="reference external" href="https://github.com/bitcoin/bips">BIPs</a> or Bitcoin Improvement protocols.  This page documents which standards TREZOR uses.</p>
+<div class="section" id="mnemonic-recovery-seed-bip39">
+<h2>Mnemonic recovery seed (<a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP39</a>)<a class="headerlink" href="#mnemonic-recovery-seed-bip39" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP39</a> - used to manage your recovery seed and recovery words.</p>
+<blockquote>
+<div><p><strong>Abstract</strong></p>
+<p>This BIP describes the implementation of a mnemonic code or mnemonic sentence &#8211; a group of easy to remember words &#8211; for the generation of deterministic wallets.</p>
+<p>It consists of two parts: generating the mnemonic, and converting it into a binary seed. This seed can be later used to generate deterministic wallets using <a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP-0032</a> or similar methods.</p>
+<p><strong>Motivation</strong></p>
+<p>A mnemonic code or sentence is superior for human interaction compared to the handling of raw binary or hexadecimal representations of a wallet seed. The sentence could be written on paper or spoken over the telephone.</p>
+<p>This guide meant to be as a way to transport computer-generated randomness over human readable transcription. It&#8217;s not a way how to process user-created sentences (also known as brainwallet) to wallet seed.</p>
+</div></blockquote>
+<p>Your TREZOR uses a mnemonic that is between 12 and 24 words.  These mnemonics correspond to recovery seeds of the following size:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="56%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Word count</th>
+<th class="head">12</th>
+<th class="head">16</th>
+<th class="head">24</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Seed size</td>
+<td>128</td>
+<td>192</td>
+<td>256</td>
+</tr>
+<tr class="row-odd"><td>Checksum bits</td>
+<td>4</td>
+<td>6</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td>Total bit width</td>
+<td>132</td>
+<td>198</td>
+<td>264</td>
+</tr>
+</tbody>
+</table>
+<p>In order to convert a binary seed to a mnemonic, the full seed, along with its checksum, is broken into 11bit segments.  Each of these segments is represented by one of the 2048 words from the TREZOR&#8217;s mnemonic seed dictionary.</p>
+</div>
+<div class="section" id="passphrase-encryption">
+<h2>Passphrase encryption<a class="headerlink" href="#passphrase-encryption" title="Permalink to this headline">¶</a></h2>
+<p>TREZORs passphrase encryption is implemented as part of BIP 39.  It allows for advanced features such as using <a class="reference external" href="../trezor-user/advanced_settings.html">multiple hidden volumes</a> with your TREZOR.</p>
+</div>
+<div class="section" id="hierarchical-deterministic-wallets-bip32-and-bip44">
+<h2>Hierarchical Deterministic wallets (<a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a> and <a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP44</a>)<a class="headerlink" href="#hierarchical-deterministic-wallets-bip32-and-bip44" title="Permalink to this headline">¶</a></h2>
+<p>TREZOR uses a Hierarchical Deterministic wallet(HD Wallet for short.  Using an HD Wallet allows your TREZOR to manage multiple bitcoin accounts with multiple addresses while still being recoverable with a simple 12-24 word seed.</p>
+<p><a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a> - the cryptography behind how TREZOR generates the keys for your bitcoin accounts from the recovery seed.</p>
+<blockquote>
+<div><p><strong>Abstract</strong></p>
+<p>This document describes hierarchical deterministic wallets (or &#8220;HD Wallets&#8221;): wallets which can be shared partially or entirely with different systems, each with or without the ability to spend coins.</p>
+<p>The specification is intended to set a standard for deterministic wallets that can be interchanged between different clients. Although the wallets described here have many features, not all are required by supporting clients.</p>
+<p>The specification consists of two parts. In a first part, a system for deriving a tree of keypairs from a single seed is presented. The second part demonstrates how to build a wallet structure on top of such a tree.</p>
+<p><strong>Motivation</strong></p>
+<p>The Bitcoin reference client uses randomly generated keys. In order to avoid the necessity for a backup after every transaction, (by default) 100 keys are cached in a pool of reserve keys. Still, these wallets are not intended to be shared and used on several systems simultaneously. They support hiding their private keys by using the wallet encrypt feature and not sharing the password, but such &#8220;neutered&#8221; wallets lose the power to generate public keys as well.</p>
+<p>Deterministic wallets do not require such frequent backups, and elliptic curve mathematics permit schemes where one can calculate the public keys without revealing the private keys. This permits for example a webshop business to let its webserver generate fresh addresses (public key hashes) for each order or for each customer, without giving the webserver access to the corresponding private keys (which are required for spending the received funds).</p>
+<p>However, deterministic wallets typically consist of a single &#8220;chain&#8221; of keypairs. The fact that there is only one chain means that sharing a wallet happens on an all-or-nothing basis. However, in some cases one only wants some (public) keys to be shared and recoverable. In the example of a webshop, the webserver does not need access to all public keys of the merchant&#8217;s wallet; only to those addresses which are used to receive customer&#8217;s payments, and not for example the change addresses that are generated when the merchant spends money. Hierarchical deterministic wallets allow such selective sharing by supporting multiple keypair chains, derived from a single root.</p>
+</div></blockquote>
+<p><a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP44</a> - the hierarchy of the keys generated by TREZOR.</p>
+<blockquote>
+<div><p><strong>Abstract</strong></p>
+<p>This BIP defines a logical hierarchy for deterministic wallets based on an algorithm described in BIP-0032 (BIP32 from now on) and purpose scheme described in <a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki">BIP-0043</a>  (BIP43 from now on).</p>
+<p>This BIP is a particular application of BIP43.</p>
+<p><strong>Motivation</strong></p>
+<p>The hierarchy proposed in this paper is quite comprehensive. It allows the handling of multiple coins, multiple accounts, external and internal chains per account and millions of addresses per chain.</p>
+</div></blockquote>
+</div>
+<div class="section" id="secure-transactions">
+<h2>Secure transactions<a class="headerlink" href="#secure-transactions" title="Permalink to this headline">¶</a></h2>
+<p>TREZOR and the myTREZOR wallet work in concert in order to conduct secure, zero trust, transactions.  In order to construct a transaction, the myTREZOR wallet sends TREZOR a list of incoming transactions and a list of outgoing addresses with amounts.  TREZOR then verifies that the incoming transactions were valid, and that they contain the right amount of bitcoins in order to send to the outgoing addresses.  Your TREZOR will also ask you before sending any money anywhere.  Once a transaction is confirmed by the user, TREZOR constructs a new transaction and sends it back to myTREZOR.   This transaction is in turn verified by myTREZOR to be correct.  This ensures that no single malfunction of the system could lead to your bitcoins getting sent to the wrong address.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="resources.html" class="btn btn-neutral float-right" title="Resources">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api-workflows.html" class="btn btn-neutral" title="API Workflows"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright SatoshiLabs.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-50819960-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>

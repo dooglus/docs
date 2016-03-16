@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced settings &mdash; TREZOR User Manual 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/theme.css.custom.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="TREZOR User Manual 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Advanced features" href="advanced_features.html"/>
+        <link rel="prev" title="Security philosophy" href="securityphilosophy.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html"><li><i class="fa fa-home fa-2x"></i></li></a>
+        <a href="../trezor-faq/index.html"><li><i class="fa fa-question-circle fa-2x"></i></li></a>
+        <a href="../trezor-user/index.html"><li><i class="fa fa-user fa-2x"></i></li></a>
+        <a href="../trezor-apps/index.html"><li><i class="fa fa-cube fa-2x"></i></li></a>
+        <a href="../trezor-tech/index.html"><li><i class="fa fa-cogs fa-2x"></i></li></a>
+        <br/>
+        
+          <a href="index.html"> TREZOR User Manual</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="whatsinthebox.html">What&#8217;s in the box?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="whatsinthebox.html#check-the-security-seal">Check the security seal</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="settingup.html">Setting up your TREZOR device</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="settingupchromeonlinux.html">Setting up Chrome extension on Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fillingoutyourrecoverycard.html">Filling out your recovery card</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_settings.html">Basic Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enteringyourpin.html">Entering your PIN</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="receivingpayments.html">Receiving payments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="receivingpayments.html#show-on-trezor">Show on TREZOR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="receivingpayments.html#confirming-that-a-payment-has-been-received">Confirming that a payment has been received</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transfertotrezor.html">Transfering money to your TREZOR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="makingpayments.html">Making payments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="makingpayments.html#outgoing-transactions">Outgoing transactions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transactiondetails.html">Understanding transaction details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forgetting.html">Logging out of myTREZOR.com</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updatingfirmware.html">Updating your TREZOR&#8217;s firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recovery.html">Recovery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recovery.html#what-happens-if-i-forget-my-pin">What happens if I forget my PIN?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recovery.html#recovery-process">Recovery process</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#during-normal-operation">During normal operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#after-an-update">After an update</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="securitybestpractices.html">Security best practices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="securitybestpractices.html#choose-a-good-pin">Choose a good PIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="securitybestpractices.html#keep-your-recovery-seed-safe-from">Keep your recovery seed safe from</a></li>
+<li class="toctree-l2"><a class="reference internal" href="securitybestpractices.html#where-not-to-keep-your-recovery-seed">Where NOT to keep your recovery seed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="securitybestpractices.html#where-to-keep-your-recovery-card">Where to keep your recovery card</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="securityphilosophy.html">Security philosophy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="securityphilosophy.html#the-zero-trust-principle">The zero trust principle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="securityphilosophy.html#why-does-the-trezor-have-a-screen-and-buttons">Why does the TREZOR have a screen and buttons?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="securityphilosophy.html#the-need-for-a-pin">The need for a PIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="securityphilosophy.html#a-single-purpose-computer">A single purpose computer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="securityphilosophy.html#limiting-the-attack-surface-no-battery-wifi-bluetooth-fingerprint-reader-nfc">Limiting the attack surface: no battery, WiFi, Bluetooth, fingerprint reader, NFC</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Advanced settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#disable-pin-protection">Disable PIN protection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-passphrase-encrypted-seeds">Using passphrase encrypted seeds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-passphrase-encryption-hidden-wallets">Multi-passphrase encryption (hidden wallets)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features.html">Advanced features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced_features.html#using-multiple-accounts">Using multiple accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_features.html#wiping-your-trezor-device">Wiping your TREZOR device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_features.html#changing-your-trezor-recovery-seed">Changing your TREZOR recovery seed</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="messages.html#signing-messages">Signing messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages.html#verifying-messages">Verifying messages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labeling.html">Labeling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labeling.html#set-up-labeling-connect-dropbox-with-your-trezor">Set up labeling: Connect Dropbox with your TREZOR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labeling.html#rename-accounts">Rename Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labeling.html#label-receiving-addresses">Label receiving addresses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labeling.html#comment-transactions">Comment transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labeling.html#how-do-trezor-and-dropbox-work-together">How do TREZOR and Dropbox work together?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="homescreen.html">Homescreen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="homescreen.html#upload-your-own-homescreen-picture">1. Upload your own homescreen picture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homescreen.html#use-trezor-homescreen-editor">2. Use TREZOR Homescreen Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homescreen.html#choose-from-trezor-homescreen-gallery">3. Choose from TREZOR Homescreen Gallery</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">TREZOR Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Downloads</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="download.html#trezor-bridge">TREZOR Bridge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#trezor-chrome-extension">TREZOR Chrome Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#seed-recovery-card">Seed recovery card</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">TREZOR User Manual</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Advanced settings</li>
+      <li class="wy-breadcrumbs-aside">
+        <ul class="share-buttons">
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://doc.satoshilabs.com/&t=" target="_blank" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img src="_static/images/flat_web_icon_set/Facebook.png"></a></li>
+            <li><a href="https://twitter.com/intent/tweet?source=http://doc.satoshilabs.com/&text=:%20http://doc.satoshilabs.com/" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent(document.URL)) + '%20@BitcoinTrezor'; return false;"><img src="_static/images/flat_web_icon_set/Twitter.png"></a></li>
+            <li><a href="https://plus.google.com/share?url=http://doc.satoshilabs.com/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img src="_static/images/flat_web_icon_set/Google+.png"></a></li>
+            <li><a href="http://www.tumblr.com/share?v=3&u=http://doc.satoshilabs.com/&t=&s=" target="_blank" title="Post to Tumblr" onclick="window.open('http://www.tumblr.com/share?v=3&u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Tumblr.png"></a></li>
+            <li><a href="http://pinterest.com/pin/create/button/?url=http://doc.satoshilabs.com/&description=" target="_blank" title="Pin it" onclick="window.open('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.URL) + '&description=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Pinterest.png"></a></li>
+            <li><a href="http://www.reddit.com/submit?url=http://doc.satoshilabs.com/&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Reddit.png"></a></li>
+            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://doc.satoshilabs.com/&title=&summary=&source=http://doc.satoshilabs.com/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/LinkedIn.png"></a></li>
+        </ul>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="advanced-settings">
+<h1>Advanced settings<a class="headerlink" href="#advanced-settings" title="Permalink to this headline">¶</a></h1>
+<p>There are several advanced settings that can be configured after setting up your TREZOR device.  For the most part, these settings can be accessed by pressing the &#8220;Advanced settings&#8221; button right after you have plugged your TREZOR.</p>
+<img alt="_images/welcometosetup-advanced.png" src="_images/welcometosetup-advanced.png" />
+<div class="section" id="disable-pin-protection">
+<h2>Disable PIN protection<a class="headerlink" href="#disable-pin-protection" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to disable PIN protection using the Disable PIN button, however we do not recommend to do so, as  PIN protection reduces the risk that a person with physical access to your TREZOR device will be able to steal your bitcoins. MyTREZOR.com will ask you for your PIN the first time you try to make a transaction after plugging in your TREZOR and it works in such a way that even the computer you use with your TREZOR never finds out your PIN.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">We DO NOT recommend to DISABLE PIN PROTECTION even if you have configured a passphrase for your TREZOR!</p>
+</div>
+</div>
+<div class="section" id="using-passphrase-encrypted-seeds">
+<h2>Using passphrase encrypted seeds<a class="headerlink" href="#using-passphrase-encrypted-seeds" title="Permalink to this headline">¶</a></h2>
+<p>In addition to a PIN it is possible to add a passphrase to your TREZOR.  This has the advantage of making your TREZOR impervious to physical attack.  Even if your TREZOR were to be stolen and the chip examined under an electron microscope to discover your recovery seed, your bitcoins would still be safe!  A passphrase can be any word or any set of letters that you might use as a password.  Your passphrase should be memorable though.  You typically would not write it down anywhere, to eliminate any possibility of it being discovered.</p>
+<p>One limitation of the passphrase approach is that you have to enter your passphrase into the computer that you use with your TREZOR.  For this reason, you should not be tempted to disable your PIN even if you use a passphrase as well!</p>
+<p>The flip side to this extreme level of security is that if you forget your passphrase your bitcoins are lost.  Really lost!</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have stored some funds in your TREZOR before setting up the passphrase encryption, they will not appear after enabling the passphrase. But don&#8217;t worry, they are not lost. You can  access them by entering empty passphrase.</p>
+</div>
+</div>
+<div class="section" id="multi-passphrase-encryption-hidden-wallets">
+<h2>Multi-passphrase encryption (hidden wallets)<a class="headerlink" href="#multi-passphrase-encryption-hidden-wallets" title="Permalink to this headline">¶</a></h2>
+<p>Security researchers have a habit of coming up with spicy names for simple attacks.  One such attack is referred to as the $5 wrench attack.</p>
+<img alt="_images/5-dollar-wrench.png" src="_images/5-dollar-wrench.png" />
+<p>(Image credit: <a class="reference external" href="https://xkcd.com/538/">Randall Munroe xkcd.com</a>. Used under the terms of the Creative Commons Attribution license)</p>
+<p>If you have your passphrase memorized and you haven&#8217;t written it down anywhere, attackers with physical access to your TREZOR may still be able to extract the passphrase with a $5 wrench.   In order to mitigate this risk it is possible to set up your TREZOR multiple times with multiple passphrases.  The goal is to have one &#8220;spoof&#8221; setup that only holds a few bitcoins or bitcents and one &#8220;real&#8221; setup that holds your fortune.</p>
+<p>In order to do this all you need to do is setup your TREZOR with a passphrase, then unplug and replug your TREZOR and enter a different passphrase.  Here&#8217;s an example:</p>
+<p>I setup my TREZOR with the passphrase &#8220;lonelypumpkins&#8221; and load a large number of bitcoins onto my device.  I unplug/replug my TREZOR and enter the passphrase &#8220;funnyspirit&#8221;.  I then send a few bitcents to the &#8220;funnyspirit&#8221; account.  When the thugs come and steal my TREZOR, I can now safely tell them that my passphrase is &#8220;funnyspirit&#8221;.  They will be able to steal a few bitcents from me, but they won&#8217;t be able to get at my fortune or even determine that a second passphrase exists.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Do not use either the passphrase &#8220;lonelypumpkins&#8221; or &#8220;funnyspirit&#8221; to secure your TREZOR device!</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="advanced_features.html" class="btn btn-neutral float-right" title="Advanced features">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="securityphilosophy.html" class="btn btn-neutral" title="Security philosophy"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright SatoshiLabs.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-50819960-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>

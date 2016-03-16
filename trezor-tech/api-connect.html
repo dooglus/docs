@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TREZOR Connect API &mdash; TREZOR Developer&#39;s guide 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/theme.css.custom.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="TREZOR Developer&#39;s guide 1.0 documentation" href="index.html"/>
+        <link rel="up" title="TREZOR APIs" href="api.html"/>
+        <link rel="next" title="Low level API" href="api-protobuf.html"/>
+        <link rel="prev" title="TREZOR APIs" href="api.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html"><li><i class="fa fa-home fa-2x"></i></li></a>
+        <a href="../trezor-faq/index.html"><li><i class="fa fa-question-circle fa-2x"></i></li></a>
+        <a href="../trezor-user/index.html"><li><i class="fa fa-user fa-2x"></i></li></a>
+        <a href="../trezor-apps/index.html"><li><i class="fa fa-cube fa-2x"></i></li></a>
+        <a href="../trezor-tech/index.html"><li><i class="fa fa-cogs fa-2x"></i></li></a>
+        <br/>
+        
+          <a href="index.html"> TREZOR Developer's guide</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#board">Board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#schematics">Schematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#bill-of-materials">Bill of Materials</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">TREZOR APIs</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">TREZOR Connect API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-protobuf.html">Low level API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography.html">Cryptography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cryptography.html#mnemonic-recovery-seed-bip39">Mnemonic recovery seed (BIP39)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptography.html#passphrase-encryption">Passphrase encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptography.html#hierarchical-deterministic-wallets-bip32-and-bip44">Hierarchical Deterministic wallets (BIP32 and BIP44)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptography.html#secure-transactions">Secure transactions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#git-repositories">Git repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#security">Security</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="feature_list.html">Feature List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protection_levels.html">Protection Levels</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">TREZOR Developer's guide</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="api.html">TREZOR APIs</a> &raquo;</li>
+      
+    <li>TREZOR Connect API</li>
+      <li class="wy-breadcrumbs-aside">
+        <ul class="share-buttons">
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://doc.satoshilabs.com/&t=" target="_blank" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img src="_static/images/flat_web_icon_set/Facebook.png"></a></li>
+            <li><a href="https://twitter.com/intent/tweet?source=http://doc.satoshilabs.com/&text=:%20http://doc.satoshilabs.com/" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent(document.URL)) + '%20@BitcoinTrezor'; return false;"><img src="_static/images/flat_web_icon_set/Twitter.png"></a></li>
+            <li><a href="https://plus.google.com/share?url=http://doc.satoshilabs.com/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img src="_static/images/flat_web_icon_set/Google+.png"></a></li>
+            <li><a href="http://www.tumblr.com/share?v=3&u=http://doc.satoshilabs.com/&t=&s=" target="_blank" title="Post to Tumblr" onclick="window.open('http://www.tumblr.com/share?v=3&u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Tumblr.png"></a></li>
+            <li><a href="http://pinterest.com/pin/create/button/?url=http://doc.satoshilabs.com/&description=" target="_blank" title="Pin it" onclick="window.open('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.URL) + '&description=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Pinterest.png"></a></li>
+            <li><a href="http://www.reddit.com/submit?url=http://doc.satoshilabs.com/&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Reddit.png"></a></li>
+            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://doc.satoshilabs.com/&title=&summary=&source=http://doc.satoshilabs.com/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/LinkedIn.png"></a></li>
+        </ul>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="trezor-connect-api">
+<h1>TREZOR Connect API<a class="headerlink" href="#trezor-connect-api" title="Permalink to this headline">¶</a></h1>
+<p>Add TREZOR Login to Your Website or App</p>
+<img alt="_images/connect-login.png" src="_images/connect-login.png" />
+<p>TREZOR Connect is a platform for easy integration of <strong>Login with TREZOR</strong> into websites or applications.</p>
+<p>TREZOR is known as the most secure bitcoin hardware wallet. TREZOR Connect expands its application to the most secure user authentication device. It allows a <strong>password-less login immune to keyloggers or phishing</strong> that provides a&nbsp;simple fluid interface for users with basic computer skills.</p>
+<p>Within the first 4 months since official release, the device was embraced by users in over 70 countries and greatly reviewed by security experts as <a class="reference external" href="http://www.coindesk.com/whats-next-bitcoin-wallet-security">the most sophisticated authenticator device in the world</a></p>
+<p>Learn more about the <a class="reference external" href="http://satoshilabs.com/news/2015-04-07-trezor-firmware-1-3-3-connect-api">TREZOR Security and Login with TREZOR</a> before implementing this API.</p>
+<div class="section" id="how-it-works">
+<h2>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<p>After you implement TREZOR Connect into your web page, the following button will appear:</p>
+<img alt="_images/connect-button.png" src="_images/connect-button.png" />
+<p>When user clicks on the button, the following dialog windows will popup:</p>
+<img alt="_images/connect-screen.png" src="_images/connect-screen.png" />
+<p>and TREZOR will show the following confirmation screen:</p>
+<img alt="_images/connect-display.png" src="_images/connect-display.png" />
+<p>After user confirms the action, the device will return a structure with signed login information. Your backend service just needs to check the signature against user&#8217;s public key.</p>
+</div>
+<div class="section" id="how-to-implement">
+<h2>How to implement<a class="headerlink" href="#how-to-implement" title="Permalink to this headline">¶</a></h2>
+<p>The implementation is fairly simple and straightforward. For full description see <a class="reference external" href="https://github.com/trezor/connect">our repository</a></p>
+</div>
+<div class="section" id="implementation-and-security-considerations">
+<h2>Implementation and security considerations<a class="headerlink" href="#implementation-and-security-considerations" title="Permalink to this headline">¶</a></h2>
+<p>TREZOR Connect leverages the ability of TREZOR device to hold securely secret keys and use them to sign messages without actually ever exposing these secrets. Thus when using login with TREZOR, no user password is needed and no reusable secret can be ever captured by keylogger or other malware.</p>
+<p>To gain the maximum security from TREZOR Connect the site should make the implementation correctly without any unintented backdoors. There are the following basic scenarios:</p>
+<p><strong>Sign in with TREZOR only</strong> (use case A)</p>
+<p>This is the most secure option: When user Sign in with TREZOR for the first time, the site offers him to create new account with his site-specific TREZOR identity.</p>
+<p>There is no other way how to login and site operator should decide carefully if he allows any other (usually much weaker) form of authentication and TREZOR identity override.</p>
+<p><strong>Classic sign in along with TREZOR option</strong> (use case B)</p>
+<p>This case occurs when TREZOR is only one of more ways of accessing user account. Usually user already has an account with username-password authentication and he pairs TREZOR with his account later.</p>
+<p>With this option, user doesn&#8217;t have to expose his orginal credentials each time he authenticates. Nevertheless, he can still easily recover access to the account using username &amp; password if his TREZOR identity gets lost.</p>
+<p>Site can also give user an option of disabling the original credentials, thus effectively creating the first use case.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Pairing TREZOR with user&#8217;s account create new way of accessing it. The site should always authenticate the user before confirming the action.</p>
+</div>
+<p><strong>TREZOR identity recovery</strong></p>
+<p>Users are instructed to keep their recovery seed safe and offline. Thus in the event of lost device, user will still be able to login with TREZOR after he recovers the seed on a new device. He may also use recovery and login through software, although the login through software means is not supported by TREZOR Connect at the moment.</p>
+<p>Nevertheless, there will be also rare cases of users who will loose both device and recovery seed. Therefore the site operator could carefully consider reasonable and solid ways of TREZOR identity override to enable the user to access his account even without his TREZOR.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api-protobuf.html" class="btn btn-neutral float-right" title="Low level API">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api.html" class="btn btn-neutral" title="TREZOR APIs"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright SatoshiLabs.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-50819960-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>

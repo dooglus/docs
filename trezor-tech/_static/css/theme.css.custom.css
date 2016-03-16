@@ -1,0 +1,29 @@
+.share-buttons {
+	list-style: none;
+}
+
+.share-buttons li {
+	display: inline;
+	opacity: 0.25;
+}
+
+.share-buttons li:hover {
+	display: inline;
+	opacity: 0.75;
+}
+
+.fa-user-secret:before {
+  content: "\f21b";
+}
+
+.fa-paint-brush:before {
+  content: "\f1fc";
+}
+
+.fa-eyedropper:before {
+  content: "\f1fb";
+}
+
+.back_to_top {
+  text-align: right;
+}

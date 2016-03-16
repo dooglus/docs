@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hardware &mdash; TREZOR Developer&#39;s guide 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/theme.css.custom.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="TREZOR Developer&#39;s guide 1.0 documentation" href="index.html"/>
+        <link rel="next" title="TREZOR APIs" href="api.html"/>
+        <link rel="prev" title="TREZOR Developer’s Guide" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html"><li><i class="fa fa-home fa-2x"></i></li></a>
+        <a href="../trezor-faq/index.html"><li><i class="fa fa-question-circle fa-2x"></i></li></a>
+        <a href="../trezor-user/index.html"><li><i class="fa fa-user fa-2x"></i></li></a>
+        <a href="../trezor-apps/index.html"><li><i class="fa fa-cube fa-2x"></i></li></a>
+        <a href="../trezor-tech/index.html"><li><i class="fa fa-cogs fa-2x"></i></li></a>
+        <br/>
+        
+          <a href="index.html"> TREZOR Developer's guide</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#board">Board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schematics">Schematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bill-of-materials">Bill of Materials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">TREZOR APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api-connect.html">TREZOR Connect API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-protobuf.html">Low level API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography.html">Cryptography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cryptography.html#mnemonic-recovery-seed-bip39">Mnemonic recovery seed (BIP39)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptography.html#passphrase-encryption">Passphrase encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptography.html#hierarchical-deterministic-wallets-bip32-and-bip44">Hierarchical Deterministic wallets (BIP32 and BIP44)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptography.html#secure-transactions">Secure transactions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#git-repositories">Git repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#security">Security</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="feature_list.html">Feature List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protection_levels.html">Protection Levels</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">TREZOR Developer's guide</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Hardware</li>
+      <li class="wy-breadcrumbs-aside">
+        <ul class="share-buttons">
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://doc.satoshilabs.com/&t=" target="_blank" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img src="_static/images/flat_web_icon_set/Facebook.png"></a></li>
+            <li><a href="https://twitter.com/intent/tweet?source=http://doc.satoshilabs.com/&text=:%20http://doc.satoshilabs.com/" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent(document.URL)) + '%20@BitcoinTrezor'; return false;"><img src="_static/images/flat_web_icon_set/Twitter.png"></a></li>
+            <li><a href="https://plus.google.com/share?url=http://doc.satoshilabs.com/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img src="_static/images/flat_web_icon_set/Google+.png"></a></li>
+            <li><a href="http://www.tumblr.com/share?v=3&u=http://doc.satoshilabs.com/&t=&s=" target="_blank" title="Post to Tumblr" onclick="window.open('http://www.tumblr.com/share?v=3&u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Tumblr.png"></a></li>
+            <li><a href="http://pinterest.com/pin/create/button/?url=http://doc.satoshilabs.com/&description=" target="_blank" title="Pin it" onclick="window.open('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.URL) + '&description=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Pinterest.png"></a></li>
+            <li><a href="http://www.reddit.com/submit?url=http://doc.satoshilabs.com/&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Reddit.png"></a></li>
+            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://doc.satoshilabs.com/&title=&summary=&source=http://doc.satoshilabs.com/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/LinkedIn.png"></a></li>
+        </ul>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="hardware">
+<h1>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="board">
+<h2>Board<a class="headerlink" href="#board" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/trezor-pcb.jpg" src="_images/trezor-pcb.jpg" />
+</div>
+<div class="section" id="schematics">
+<h2>Schematics<a class="headerlink" href="#schematics" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/trezor.sch.png" src="_images/trezor.sch.png" />
+</div>
+<div class="section" id="bill-of-materials">
+<h2>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>5x SMD 0603 Capacitor 1uF - C1, C2, C4, C10, C11</li>
+<li>7x SMD 0603 Capacitor 0.1uF - C3, C12, C13, C14, C15, C16, C18</li>
+<li>3x SMD 0603 Capacitor 2.2uF - C6, C7, C17</li>
+<li>1x SMD 0603 Capacitor 4.7uF - C5</li>
+<li>2x SMD 0603 Capacitor 22pF - C8, C9</li>
+<li>1x SMD 0603 Resistor 390k - R1</li>
+<li>2x Microbuton P-B17310</li>
+<li>1x Micro USB (type B) Receptacle Bottom</li>
+<li>1x OLED display 128x64 UG-2864HSWEG01</li>
+<li>1x STM32F205RE</li>
+<li>1x MCP1703 Low Dropout Voltage Regulator</li>
+<li>1x ABMM2 8 MHz Crystal</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="TREZOR APIs">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="TREZOR Developer’s Guide"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright SatoshiLabs.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-50819960-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>

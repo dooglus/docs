@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Low level API &mdash; TREZOR Developer&#39;s guide 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/theme.css.custom.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="TREZOR Developer&#39;s guide 1.0 documentation" href="index.html"/>
+        <link rel="up" title="TREZOR APIs" href="api.html"/>
+        <link rel="next" title="API Workflows" href="api-workflows.html"/>
+        <link rel="prev" title="TREZOR Connect API" href="api-connect.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html"><li><i class="fa fa-home fa-2x"></i></li></a>
+        <a href="../trezor-faq/index.html"><li><i class="fa fa-question-circle fa-2x"></i></li></a>
+        <a href="../trezor-user/index.html"><li><i class="fa fa-user fa-2x"></i></li></a>
+        <a href="../trezor-apps/index.html"><li><i class="fa fa-cube fa-2x"></i></li></a>
+        <a href="../trezor-tech/index.html"><li><i class="fa fa-cogs fa-2x"></i></li></a>
+        <br/>
+        
+          <a href="index.html"> TREZOR Developer's guide</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#board">Board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#schematics">Schematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#bill-of-materials">Bill of Materials</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">TREZOR APIs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api-connect.html">TREZOR Connect API</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Low level API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography.html">Cryptography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cryptography.html#mnemonic-recovery-seed-bip39">Mnemonic recovery seed (BIP39)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptography.html#passphrase-encryption">Passphrase encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptography.html#hierarchical-deterministic-wallets-bip32-and-bip44">Hierarchical Deterministic wallets (BIP32 and BIP44)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptography.html#secure-transactions">Secure transactions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#git-repositories">Git repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#security">Security</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="feature_list.html">Feature List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protection_levels.html">Protection Levels</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">TREZOR Developer's guide</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="api.html">TREZOR APIs</a> &raquo;</li>
+      
+    <li>Low level API</li>
+      <li class="wy-breadcrumbs-aside">
+        <ul class="share-buttons">
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://doc.satoshilabs.com/&t=" target="_blank" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img src="_static/images/flat_web_icon_set/Facebook.png"></a></li>
+            <li><a href="https://twitter.com/intent/tweet?source=http://doc.satoshilabs.com/&text=:%20http://doc.satoshilabs.com/" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent(document.URL)) + '%20@BitcoinTrezor'; return false;"><img src="_static/images/flat_web_icon_set/Twitter.png"></a></li>
+            <li><a href="https://plus.google.com/share?url=http://doc.satoshilabs.com/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img src="_static/images/flat_web_icon_set/Google+.png"></a></li>
+            <li><a href="http://www.tumblr.com/share?v=3&u=http://doc.satoshilabs.com/&t=&s=" target="_blank" title="Post to Tumblr" onclick="window.open('http://www.tumblr.com/share?v=3&u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Tumblr.png"></a></li>
+            <li><a href="http://pinterest.com/pin/create/button/?url=http://doc.satoshilabs.com/&description=" target="_blank" title="Pin it" onclick="window.open('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.URL) + '&description=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Pinterest.png"></a></li>
+            <li><a href="http://www.reddit.com/submit?url=http://doc.satoshilabs.com/&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Reddit.png"></a></li>
+            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://doc.satoshilabs.com/&title=&summary=&source=http://doc.satoshilabs.com/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/LinkedIn.png"></a></li>
+        </ul>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="low-level-api">
+<h1>Low level API<a class="headerlink" href="#low-level-api" title="Permalink to this headline">¶</a></h1>
+<p>TREZOR communicates using a simple request-response model.
+Messages are exchanged always in a purely synchronous fashion over <a class="reference external" href="https://en.wikipedia.org/wiki/USB_HID">USB HID</a>.
+These messages are serialized into binary format using <a class="reference external" href="https://en.wikipedia.org/wiki/Protocol_Buffers">Protocol Buffers</a>.</p>
+<div class="section" id="id1">
+<h2>USB HID<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The SatoshiLabs Vendor ID is <code class="docutils literal"><span class="pre">0x534c</span></code> and TREZOR&#8217;s Device ID <code class="docutils literal"><span class="pre">0x0001</span></code>.</p>
+<p>If you&#8217;ve never worked with HID devices before, it may be helpful to take a look at the <a class="reference external" href="https://github.com/trezor/trezor-android/blob/master/src/com/satoshilabs/trezor/Trezor.java">Java implementation</a> which establishes a connection to TREZOR and reads and writes to the device.</p>
+</div>
+<div class="section" id="protobuf-definitions">
+<h2>Protobuf definitions<a class="headerlink" href="#protobuf-definitions" title="Permalink to this headline">¶</a></h2>
+<p>Protobuf message definitions are stored in the <a class="reference external" href="https://github.com/trezor/trezor-common/tree/master/protob">trezor-common</a> repository.  The following files are of interest:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/trezor/trezor-common/blob/master/protob/messages.proto">messages.proto</a> &#8211; describes messages</li>
+<li><a class="reference external" href="https://github.com/trezor/trezor-common/blob/master/protob/types.proto">types.proto</a> &#8211; describes data structures sent within the messages</li>
+</ul>
+</div>
+<div class="section" id="api-workflows">
+<h2>API workflows<a class="headerlink" href="#api-workflows" title="Permalink to this headline">¶</a></h2>
+<p>Message ordering in the TREZOR protobuf protocol is significant.  You will find a list of standard workflows bellow:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-workflows.html">API Workflows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#initialize-features">Initialize/Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#button-meta-workflow">Button meta-workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#pinmatrix-meta-workflow">PinMatrix meta-workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#passphrase-meta-workflow">Passphrase meta-workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#getaddress">GetAddress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#getpublickey">GetPublicKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#signtx">SignTx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#signmessage-verifymessage">SignMessage/VerifyMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#cipherkeyvalue">CipherKeyValue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#encryptmessage-decryptmessage">EncryptMessage/DecryptMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#resetdevice">ResetDevice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#recoverydevice">RecoveryDevice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#loaddevice">LoadDevice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#wipedevice">WipeDevice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#applysettings">ApplySettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-workflows.html#changepin">ChangePin</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api-workflows.html" class="btn btn-neutral float-right" title="API Workflows">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api-connect.html" class="btn btn-neutral" title="TREZOR Connect API"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright SatoshiLabs.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-50819960-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Security threats &mdash; TREZOR Frequently Asked Questions 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/theme.css.custom.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="TREZOR Frequently Asked Questions 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Hardware design &amp; security" href="hardware.html"/>
+        <link rel="prev" title="Refunds" href="refunds.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html"><li><i class="fa fa-home fa-2x"></i></li></a>
+        <a href="../trezor-faq/index.html"><li><i class="fa fa-question-circle fa-2x"></i></li></a>
+        <a href="../trezor-user/index.html"><li><i class="fa fa-user fa-2x"></i></li></a>
+        <a href="../trezor-apps/index.html"><li><i class="fa fa-cube fa-2x"></i></li></a>
+        <a href="../trezor-tech/index.html"><li><i class="fa fa-cogs fa-2x"></i></li></a>
+        <br/>
+        
+          <a href="index.html"> TREZOR Frequently Asked Questions</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Product Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#what-is-trezor">What is TREZOR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#how-does-trezor-work">How does TREZOR work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#which-operating-systems-and-devices-support-trezor">Which operating systems and devices support TREZOR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#which-wallets-are-compatible-with-trezor-hardware">Which wallets are compatible with TREZOR hardware?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#which-wallets-are-compatible-with-trezor-recovery-seed">Which wallets are compatible with TREZOR recovery seed?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#which-wallets-or-services-can-import-trezor-account-public-keys-xpub">Which wallets or services can import TREZOR account public keys (xpub)?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#which-coins-are-currently-supported">Which coins are currently supported?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="differences.html">How is TREZOR different from ...</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="differences.html#an-ordinary-web-wallet">an ordinary Web Wallet?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="differences.html#a-desktop-bitcoin-client">a desktop Bitcoin client?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="differences.html#your-mobile-phone">your mobile phone?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="differences.html#a-usb-flash-drive">a USB flash drive?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="differences.html#an-encrypted-wallet">an encrypted wallet?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="differences.html#yubikey">Yubikey?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="differences.html#a-paper-backup-of-my-keys">a paper backup of my keys?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="differences.html#comparison-table">Comparison Table</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software design &amp; security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software.html#what-is-a-recovery-seed-a-pin-and-encryption-passphrase-and-the-difference-between-them">What is a recovery seed, a PIN and encryption passphrase and the difference between them?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#is-it-safe-to-enter-the-pin-on-my-computer-and-not-on-the-trezor-itself">Is it safe to enter the PIN on my computer and not on the TREZOR itself?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#why-should-i-trust-trezor-with-my-private-keys">Why should I trust TREZOR with my private keys?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#how-can-a-seed-made-of-several-simple-words-be-more-secure-than-a-strong-password-with-caps-or-numerical-signs">How can a seed made of several simple words be more secure than a strong password with caps or numerical signs?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#why-should-i-do-a-paper-backup-of-my-seed">Why should I do a paper backup of my seed?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#if-somebody-steals-my-trezor-they-ll-just-empty-out-my-wallet-before-i-have-the-chance-to-restore-anyway-right">If somebody steals my Trezor, they&#8217;ll just empty out my wallet before I have the chance to restore anyway. Right?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="eshop.html">Ordering &amp; Shipping</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#how-to-buy-a-trezor">How to buy a TREZOR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#how-can-i-pay">How can I pay?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#i-don-t-have-any-bitcoins-can-i-pay-with-credit-card-paypal-or-wire-transfer">I don&#8217;t have any bitcoins. Can I pay with credit card, PayPal or wire transfer?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#how-will-you-know-that-i-have-actually-made-the-payment">How will you know that I have actually made the payment?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#can-i-change-my-order">Can I change my order?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#what-is-in-the-package">What is in the package?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#do-you-ship-to-my-country">Do you ship to my country?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#how-long-does-it-take-you-to-handle-the-order">How long does it take you to handle the order?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#what-are-the-shipping-options">What are the shipping options?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#where-can-i-follow-my-order-get-a-tracking-number">Where can I follow my order (get a tracking number)?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#how-do-i-know-when-my-trezor-is-shipped">How do I know when my TREZOR is shipped?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#can-you-deliver-one-order-to-multiple-address">Can you deliver one order to multiple address?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#my-package-didn-t-arrive-yet-what-can-be-the-reason">My package didn&#8217;t arrive yet. What can be the reason?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#how-do-i-recognize-my-package-got-lost">How do I recognize my package got lost?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#how-does-the-investigation-work-and-how-long-does-it-take">How does the investigation work and how long does it take?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eshop.html#i-want-to-start-the-investigation-what-should-i-do">I want to start the investigation. What should I do?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="warranty.html">Product doesn&#8217;t work</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="warranty.html#how-do-i-test-if-it-works-properly">How do I test if it works properly?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="warranty.html#it-doesn-t-work-how-do-i-send-it-back">It doesn&#8217;t work, how do I send it back?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="warranty.html#how-long-will-the-rma-process-take">How long will the RMA process take?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="warranty.html#what-can-be-a-result">What can be a result?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="refunds.html">Refunds</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="refunds.html#when-can-i-claim-a-refund">When can I claim a refund?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refunds.html#what-kind-of-refund-can-i-claim">What kind of refund can I claim?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refunds.html#how-do-i-claim-a-refund">How do I claim a refund?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refunds.html#how-long-will-it-take">How long will it take?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refunds.html#how-will-i-know-the-refund-has-been-sent">How will I know the refund has been sent?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Security threats</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-happens-if-my-trezor-gets-stolen">What happens if my TREZOR gets stolen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-if-my-computer-that-runs-my-bitcoin-wallet-is-stolen">What if my computer that runs my bitcoin wallet is stolen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-happens-if-my-recovery-seed-is-stolen">What happens if my recovery seed is stolen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-happens-if-the-satoshilabs-servers-are-hacked-and-the-firmware-signing-key-is-stolen">What happens if the SatoshiLabs servers are hacked and the firmware signing key is stolen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-happens-if-the-satoshilabs-shuts-down">What happens if the SatoshiLabs shuts down?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-if-i-run-the-trezor-recovery-process-on-an-infected-computer">What if I run the TREZOR recovery process on an infected computer?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-doesn-t-trezor-protect-against-yet">What doesn&#8217;t TREZOR protect against (yet)?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware design &amp; security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#what-are-the-technical-parameters-of-the-case">What are the technical parameters of the case?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#can-i-plug-trezor-into-usb-3-0-blue-port">Can I plug TREZOR into USB 3.0 (blue) port?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#what-kind-of-hardware-specs-does-the-trezor-have">What kind of hardware specs does the TREZOR have?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#why-does-trezor-not-have-a-fingerprint-reader">Why does TREZOR not have a fingerprint reader?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#is-the-display-of-trezor-big-enough-to-show-the-entire-address">Is the display of TREZOR big enough to show the entire address?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#is-it-safe-to-get-trezor-through-the-airport-check">Is it safe to get TREZOR through the airport check?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#is-trezor-heat-cold-resistant-waterproof">Is TREZOR heat &amp; cold resistant, waterproof?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development Corner</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development.html#i-want-to-participate-on-implementing-trezor-with-my-wallet-or-service">I want to participate on implementing TREZOR with my wallet or service.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#is-it-possible-to-flash-the-device">Is it possible to flash the device?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#where-can-i-find-the-source-codes">Where can I find the source codes?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="affiliate.html">Affiliate Program</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="affiliate.html#why-should-i-join-the-affiliate-program">Why should I join the affiliate program?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affiliate.html#what-s-in-it-for-me">What&#8217;s in it for me?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affiliate.html#how-do-i-become-your-affiliate">How do I become your affiliate?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affiliate.html#where-are-the-affiliate-conditions">Where are the Affiliate Conditions?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affiliate.html#where-can-i-find-useful-information-and-updates-about-trezor">Where can I find useful information and updates about Trezor?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affiliate.html#how-to-link-correctly">How to link correctly?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affiliate.html#where-can-i-find-a-logo-of-trezor">Where can I find a logo of TREZOR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affiliate.html#which-banners-can-i-use">Which banners can I use?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affiliate.html#i-see-some-rewards-but-i-didn-t-receive-any-btc-yet-why">I see some rewards but I didn&#8217;t receive any BTC yet. Why?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affiliate.html#how-do-you-calculate-my-rewards">How do you calculate my rewards?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affiliate.html#what-are-confirmed-rewards">What are Confirmed rewards?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affiliate.html#what-are-total-pending-or-unconfirmed-rewards">What are Total pending or Unconfirmed Rewards?</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">TREZOR Frequently Asked Questions</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Security threats</li>
+      <li class="wy-breadcrumbs-aside">
+        <ul class="share-buttons">
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://doc.satoshilabs.com/&t=" target="_blank" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img src="_static/images/flat_web_icon_set/Facebook.png"></a></li>
+            <li><a href="https://twitter.com/intent/tweet?source=http://doc.satoshilabs.com/&text=:%20http://doc.satoshilabs.com/" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent(document.URL)) + '%20@BitcoinTrezor'; return false;"><img src="_static/images/flat_web_icon_set/Twitter.png"></a></li>
+            <li><a href="https://plus.google.com/share?url=http://doc.satoshilabs.com/" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img src="_static/images/flat_web_icon_set/Google+.png"></a></li>
+            <li><a href="http://www.tumblr.com/share?v=3&u=http://doc.satoshilabs.com/&t=&s=" target="_blank" title="Post to Tumblr" onclick="window.open('http://www.tumblr.com/share?v=3&u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Tumblr.png"></a></li>
+            <li><a href="http://pinterest.com/pin/create/button/?url=http://doc.satoshilabs.com/&description=" target="_blank" title="Pin it" onclick="window.open('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.URL) + '&description=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Pinterest.png"></a></li>
+            <li><a href="http://www.reddit.com/submit?url=http://doc.satoshilabs.com/&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/Reddit.png"></a></li>
+            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://doc.satoshilabs.com/&title=&summary=&source=http://doc.satoshilabs.com/" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"><img src="_static/images/flat_web_icon_set/LinkedIn.png"></a></li>
+        </ul>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="security-threats">
+<h1>Security threats<a class="headerlink" href="#security-threats" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-happens-if-my-trezor-gets-stolen">
+<h2>What happens if my TREZOR gets stolen?<a class="headerlink" href="#what-happens-if-my-trezor-gets-stolen" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Can the thieves take all my coins?</li>
+<li>Is there some way to recover my account once I get a new TREZOR?</li>
+</ul>
+<p>The short answers:</p>
+<ul class="simple">
+<li>No. Each TREZOR has a <a class="reference external" href="http://doc.satoshilabs.com/trezor-user/enteringyourpin.html">PIN code</a> to prevent misuse in case of physical thief.</li>
+<li>Yes. See <a class="reference external" href="http://doc.satoshilabs.com/trezor-user/recovery.html">recovery</a>.</li>
+</ul>
+<p>Just how easy (or hard) is it to get some bitcoins out of a stolen TREZOR?</p>
+<div class="section" id="brute-forcing-the-trezor-pin">
+<h3>Brute forcing the TREZOR PIN<a class="headerlink" href="#brute-forcing-the-trezor-pin" title="Permalink to this headline">¶</a></h3>
+<p>Your TREZOR is protected by a PIN code, which can be up to 10 digits between 1 and 9.  There are 6561 possible 4 digit PINs for the TREZOR.  If you choose a good PIN, it will take hundreds to thousands of guesses to guess your PIN.  Each time you enter a wrong PIN, the wait time increases by a power of 2.  After the first few failures, you have to wait several seconds before you&#8217;ll be able to try another PIN.  Even just trying the <a class="reference external" href="http://www.datagenetics.com/blog/september32012/">top 20 PINs</a> would take about 6 days(150 hours). Trying 30 PINs would take around 17 years.  Trying 100 random PINs would take a VERY LONG time.</p>
+<p>The number of PIN entry failures is stored in the TREZOR&#8217;s memory.  This means that power cycling the TREZOR won&#8217;t magically make the wait time go to zero again.  The best you can do by turning the TREZOR on and off again is make the timer start over again.</p>
+</div>
+<div class="section" id="reflashing-the-trezor-with-evil-firmware">
+<h3>Reflashing the TREZOR with evil firmware<a class="headerlink" href="#reflashing-the-trezor-with-evil-firmware" title="Permalink to this headline">¶</a></h3>
+<p>Official TREZOR firmware is signed by the SatoshiLabs master key.  Installing unofficial firmware on the TREZOR is possible, but doing so will wipe the device storage and TREZOR will show a warning every time it starts.  Reprogramming the bootloader is impossible, because all TREZORs ship with their secure programming fuse blown.</p>
+</div>
+<div class="section" id="inspect-the-trezors-memory-with-an-electron-microscope">
+<h3>Inspect the TREZORs memory with an electron microscope<a class="headerlink" href="#inspect-the-trezors-memory-with-an-electron-microscope" title="Permalink to this headline">¶</a></h3>
+<p>You might imagine yourself <a class="reference external" href="http://zeptobars.ru/en/read/OPA627-AD744-real-vs-fake-china-ebay">dissolving the TREZOR CPU in acid</a>, finding the reprogramming fuse, repairing it, and then loading evil firmware on the TREZOR.  I&#8217;m no science fiction author, but my guess is &#8211; this might be possible.  However, the Cortex M3 is a sensitive multilayer chip.  The components inside are much smaller than those fake eBay amps.  Chances are, all you&#8217;d end up doing is destroying the chip.  Even if you succeeded in doing so, this will be a costly and time consuming task.  In the end the bitcoins will be gone already because the original owner will have <a class="reference external" href="http://doc.satoshilabs.com/trezor-user/advanced_features.html#changing-your-trezor-recovery-seed">changed their recovery seed</a> upon discovering that their TREZOR was stolen.</p>
+</div>
+<div class="section" id="evil-maid-attack-replace-the-trezor-with-a-fake">
+<h3>Evil maid attack - replace the TREZOR with a fake<a class="headerlink" href="#evil-maid-attack-replace-the-trezor-with-a-fake" title="Permalink to this headline">¶</a></h3>
+<p>It might be possible for an evil ninja, or your little brother, to steal your TREZOR and replace it with a fake TREZOR.  If the fake TREZOR was embedded with a wireless transmitter, then the fake TREZOR could wirelessly transmit any PIN it received.   The attacker would then have full access to your funds.</p>
+<p>If you are concerned about such an attack, it is a good idea to sign the back of your TREZOR with a permanent pen. Don&#8217;t forget to check the signature before each use.</p>
+<p>The TREZOR&#8217;s chassis is sealed using ultrasound. Opening the TREZOR without destroying the case is nearly impossible.</p>
+</div>
+</div>
+<div class="section" id="what-if-my-computer-that-runs-my-bitcoin-wallet-is-stolen">
+<h2>What if my computer that runs my bitcoin wallet is stolen?<a class="headerlink" href="#what-if-my-computer-that-runs-my-bitcoin-wallet-is-stolen" title="Permalink to this headline">¶</a></h2>
+<p>If your computer gets stolen, just plug your TREZOR to another computer and you&#8217;ll get your account balance and transaction history. Might your TREZOR get lost as well, simply recover the seed from your paper backup to a new TREZOR device or a TREZOR compatible wallet software.</p>
+</div>
+<div class="section" id="what-happens-if-my-recovery-seed-is-stolen">
+<h2>What happens if my recovery seed is stolen?<a class="headerlink" href="#what-happens-if-my-recovery-seed-is-stolen" title="Permalink to this headline">¶</a></h2>
+<p>You need to keep your recovery seed safe from theft.  If your recovery seed is stolen and you haven&#8217;s set a passphrase protection, then your bitcoins can be stolen as well.  However, if you like, TREZOR can protect against recovery seed theft with <a class="reference external" href="../trezor-user/advanced_settings.html#using-passphrase-encrypted-seeds">a passphrase</a>, and therefore eliminate this risk.</p>
+</div>
+<div class="section" id="what-happens-if-the-satoshilabs-servers-are-hacked-and-the-firmware-signing-key-is-stolen">
+<h2>What happens if the SatoshiLabs servers are hacked and the firmware signing key is stolen?<a class="headerlink" href="#what-happens-if-the-satoshilabs-servers-are-hacked-and-the-firmware-signing-key-is-stolen" title="Permalink to this headline">¶</a></h2>
+<p>First off, this won&#8217;t happen ;).  The SatoshiLabs master key is kept very safe.  However, you don&#8217;t need to rely on the SatoshiLabs signature.  You can <a class="reference external" href="https://github.com/trezor/trezor-mcu/blob/master/README.rst">verify the build yourself</a>.  Our hope is that a few trusted TREZOR users will make a habit of verifying firmware checksums.  If you are concerned about this, we suggest making a habit of checking <a class="reference external" href="http://satoshilabs.com/news">our blog</a> or social news channels such as <a class="reference external" href="http://www.reddit.com/r/TREZOR">reddit</a> before applying any updates.  If there ever was a problem with the firmware not matching the source code, you can be sure someone will have written about it.</p>
+<p>You don&#8217;t need to worry about the firmware being updated by a computer virus.  Your TREZOR will ask you to manually confirm the update before anything is written to the TREZOR&#8217;s memory.</p>
+</div>
+<div class="section" id="what-happens-if-the-satoshilabs-shuts-down">
+<h2>What happens if the SatoshiLabs shuts down?<a class="headerlink" href="#what-happens-if-the-satoshilabs-shuts-down" title="Permalink to this headline">¶</a></h2>
+<p>There are no such plans because we love bitcoin, but even if we had to close down, there&#8217;s nothing to worry about.
+You can use your TREZOR together with other BIP32, BIP39 and BIP44 <a class="reference external" href="../trezor-apps/index.html">compatible wallets</a>. Since our code is opensource, developers from around the world can maintain it and add new functionalities.</p>
+</div>
+<div class="section" id="what-if-i-run-the-trezor-recovery-process-on-an-infected-computer">
+<h2>What if I run the TREZOR recovery process on an infected computer?<a class="headerlink" href="#what-if-i-run-the-trezor-recovery-process-on-an-infected-computer" title="Permalink to this headline">¶</a></h2>
+<p>During <a class="reference external" href="../trezor-user/recovery.html">the TREZOR recovery process</a> you are asked to enter your recovery seed into the computer with the words in a random order.  By default, the TREZOR uses a 24 word recovery seed.</p>
+<p>If your computer has a keylogger installed on it, then the randomly ordered words may be stolen. One might try to re-arrange these words, until they found the correct word ordering.  They can check the order of the words, by generating a bitcoin address using each ordering and checking if the address belongs to you.</p>
+<p>There are <a class="reference external" href="http://en.wikipedia.org/wiki/Factorial">24!</a> possible orderings of a 24 word seed.  That is 620448401733239439360000 possible orderings.</p>
+<p>Each 24 word TREZOR recovery seed is verified with an <a class="reference external" href="../trezor-tech/cryptography.html#mnemonic-recovery-seed-bip39">8 bit checksum</a> .  Using the checksum to eliminate invalid seeds, you can reduce the search space by a factor of 256.  This gives us a search space of:</p>
+<p>24! ÷ 256 = 2423626569270466560000</p>
+<p>Going from TREZOR recovery seed to public bitcoin address takes 2 × 2048 iterations of <a class="reference external" href="https://en.wikipedia.org/wiki/PBKDF2">PBKDF2</a>, which in turn uses <a class="reference external" href="https://en.wikipedia.org/wiki/SHA-512">SHA-512</a>. All in all, going from a potential TREZOR recovery seed to a bitcoin address, is slightly more difficult than running SHA-512 8096 times.</p>
+<p>To summarise, in order to check all possible orderings in a 24 word seed, you need to run SHA-512:</p>
+<p>24! ÷ 256 × 8096 = 19621680704813697269760000 times</p>
+<p>The bitcoin network is capable of preforming <a class="reference external" href="https://blockchain.info/charts/hash-rate">176 537 883 000 000 000</a> iterations of <a class="reference external" href="https://en.bitcoin.it/wiki/Hash">SHA-256</a> each second.</p>
+<p>If we wave our hands a bit, we can claim that SHA-512 and SHA-256 are the same difficulty (which they aren&#8217;t but let&#8217;s pretend they are).  Therefore, it should take somewhere around half of:</p>
+<p>(24! ÷ 256 × 8096) ÷ 176 537 883 000 000 000 ÷ 60 ÷ 60 ÷ 24 ÷ 365 = 3.5 years</p>
+<p>for the <strong>ENTIRE BITCOIN NETWORK</strong> to crack the seed.  If you have that kind of hashing power, you&#8217;d make better money mining at <a class="reference external" href="https://mining.bitcoin.cz/">Slush Pool</a> than trying to steal bitcoins. :-) On a normal botnet cracking a TREZOR seed would take millenia.</p>
+</div>
+<div class="section" id="what-doesn-t-trezor-protect-against-yet">
+<h2>What doesn&#8217;t TREZOR protect against (yet)?<a class="headerlink" href="#what-doesn-t-trezor-protect-against-yet" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="phishing">
+<h3>Phishing<a class="headerlink" href="#phishing" title="Permalink to this headline">¶</a></h3>
+<p>If you wish to make a payment to someone on the Internet, you need to know their bitcoin address. Unlike TREZOR, computers are not necessarily secure and it is possible that the bitcoin address displayed on your screen has been maliciously modified.</p>
+<p>To be safe, we recommend confirming the recipient&#8217;s bitcoin address through a second channel, such as SMS, a phone call, or an in-person meeting.</p>
+<p>When <strong>receiving funds</strong>, you can guarantee that you are providing safe receiving addresses by using the <a class="reference external" href="../trezor-user/receivingpayments.html#receiving-payments">Show on TREZOR</a> feature. Using this feature you can easily check to see if the receiving address has not been changed on a potentially compromised computer.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hardware.html" class="btn btn-neutral float-right" title="Hardware design &amp; security">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="refunds.html" class="btn btn-neutral" title="Refunds"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright SatoshiLabs.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-50819960-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
